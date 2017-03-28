@@ -1,9 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-	 version="3.1">
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>HomeServlet</servlet-name>
+        <servlet-class>br.com.juros.servlets.HomeServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FormJurosSimplesServlet</servlet-name>
+        <servlet-class>br.com.juros.servlets.FormJurosSimplesServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FormJurosCompostoServlet</servlet-name>
+        <servlet-class>br.com.juros.servlets.FormJurosCompostoServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ResultJurosSimplesServlet</servlet-name>
+        <servlet-class>br.com.juros.servlets.ResultJurosSimplesServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ResultJurosCompostoServlet</servlet-name>
+        <servlet-class>br.com.juros.servlets.ResultJurosCompostoServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HomeServlet</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FormJurosSimplesServlet</servlet-name>
+        <url-pattern>/juros-simples</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FormJurosCompostoServlet</servlet-name>
+        <url-pattern>/juros-composto</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ResultJurosSimplesServlet</servlet-name>
+        <url-pattern>/resultado/juros-simples</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ResultJurosCompostoServlet</servlet-name>
+        <url-pattern>/resultado/juros-composto</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
