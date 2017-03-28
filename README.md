@@ -5,3 +5,7 @@ Projeto 02 da disciplina de POO do curso de ADS da FATEC Praia Grande
 Criar Servlets para cálculo de juros simples e composos.
 
 ### Equipe 6
+- Felipe Lima
+- Felipe Reis
+- Gabriel Fernandes
+- Jefferson Nascimento
