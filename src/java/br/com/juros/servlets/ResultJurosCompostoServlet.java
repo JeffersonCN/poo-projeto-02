@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author jeffersoncn
+ * @author gabrielfernandes1996
  */
 public class ResultJurosCompostoServlet extends HttpServlet {
 
@@ -37,8 +37,31 @@ public class ResultJurosCompostoServlet extends HttpServlet {
             out.println("<head>");
             out.println("<title>Servlet ResultJurosCompostoServlet</title>");            
             out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ResultJurosCompostoServlet at " + request.getContextPath() + "</h1>");
+             out.println("<body>");
+            double capital = 0;
+            try{ capital = Double.parseDouble(request.getParameter("capital"));
+            }catch(Exception ex){}
+            double juros = 0;
+            try{ juros = Double.parseDouble(request.getParameter("taxa"));
+            }catch(Exception ex){}
+            int tempo = 0;
+            try{ tempo = Integer.parseInt(request.getParameter("periodos"));
+            }catch(Exception ex){}
+            int controle = 1;
+            double juroscalculado = 1 + (juros/100);
+            double taxajuros = Math.pow(juroscalculado, tempo);
+            double montante = capital * juroscalculado;
+                    out.println("<h1>Resultado: </h1>");
+                    out.println("<h2>O valor do Capital inserido foi R$: "+ String.format("%.2f", capital) + "</h2>");
+                    out.println("<h2>A taxa de juros: " + juros + "%</h2>");
+                    out.println("<h2>O tempo em meses: " + tempo + "</h2>");
+                        do {
+                            out.println("<h2>Valor do montante no mês " + controle + " será: " + String.format("%.2f", montante) + "</h2>");
+                            capital = montante;
+                            montante = (montante* juroscalculado);
+                            controle++;
+                        } while (controle != tempo + 1);
+                        
             out.println("</body>");
             out.println("</html>");
         }
