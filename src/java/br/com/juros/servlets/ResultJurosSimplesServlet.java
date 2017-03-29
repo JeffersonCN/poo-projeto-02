@@ -73,7 +73,7 @@ public class ResultJurosSimplesServlet extends HttpServlet {
             out.print("     </div> ");
             out.print("  ");
             out.print("     <div class='pusher'> ");
-            out.print("         <h1 class='ui  header'>Juros Composto</h1> ");
+            out.print("         <h1 class='ui  header'>Juros Simples</h1> ");
             out.print("  ");
             out.print("         <div class='ui divider'></div> ");
             out.print("  ");
