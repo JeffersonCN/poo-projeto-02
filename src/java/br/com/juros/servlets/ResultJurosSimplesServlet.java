@@ -83,7 +83,7 @@ public class ResultJurosSimplesServlet extends HttpServlet {
             out.print("                     <div class='ui small statistics' id='valores'> ");
             out.print("                         <div class='statistic'> ");
             out.print("                             <div class='value'> ");
-            out.print("                                 $ 1000,00 ");
+            out.print("                                 "+ String.format("%.2f",c)+"");
             out.print("                             </div> ");
             out.print("                             <div class='label'> ");
             out.print("                                 Capital ");
@@ -91,7 +91,7 @@ public class ResultJurosSimplesServlet extends HttpServlet {
             out.print("                         </div> ");
             out.print("                         <div class='statistic'> ");
             out.print("                             <div class='value'> ");
-            out.print("                                 4% ");
+            out.print("                                 "+ String.format("%.2f",j)+"%");
             out.print("                             </div> ");
             out.print("                             <div class='label'> ");
             out.print("                                 Taxa de Juros ");
@@ -99,7 +99,7 @@ public class ResultJurosSimplesServlet extends HttpServlet {
             out.print("                         </div> ");
             out.print("                         <div class='statistic'> ");
             out.print("                             <div class='value'> ");
-            out.print("                                 12 ");
+            out.print("                                 "+ t+"");
             out.print("                             </div> ");
             out.print("                             <div class='label'> ");
             out.print("                                 Períodos ");
