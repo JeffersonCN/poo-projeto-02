@@ -31,39 +31,131 @@ public class ResultJurosCompostoServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ResultJurosCompostoServlet</title>");            
-            out.println("</head>");
-             out.println("<body>");
             double capital = 0;
-            try{ capital = Double.parseDouble(request.getParameter("capital"));
-            }catch(Exception ex){}
+            try {
+                capital = Double.parseDouble(request.getParameter("capital"));
+            } catch (Exception ex) {
+            }
             double juros = 0;
-            try{ juros = Double.parseDouble(request.getParameter("taxa"));
-            }catch(Exception ex){}
+            try {
+                juros = Double.parseDouble(request.getParameter("taxa"));
+            } catch (Exception ex) {
+            }
             int tempo = 0;
-            try{ tempo = Integer.parseInt(request.getParameter("periodos"));
-            }catch(Exception ex){}
+            try {
+                tempo = Integer.parseInt(request.getParameter("periodos"));
+            } catch (Exception ex) {
+            }
             int controle = 1;
-            double juroscalculado = 1 + (juros/100);
+            double juroscalculado = 1 + (juros / 100);
             double taxajuros = Math.pow(juroscalculado, tempo);
             double montante = capital * juroscalculado;
-                    out.println("<h1>Resultado: </h1>");
-                    out.println("<h2>O valor do Capital inserido foi R$: "+ String.format("%.2f", capital) + "</h2>");
-                    out.println("<h2>A taxa de juros: " + juros + "%</h2>");
-                    out.println("<h2>O tempo em meses: " + tempo + "</h2>");
-                        do {
-                            out.println("<h2>Valor do montante no mês " + controle + " será: " + String.format("%.2f", montante) + "</h2>");
-                            capital = montante;
-                            montante = (montante* juroscalculado);
-                            controle++;
-                        } while (controle != tempo + 1);
-                        
-            out.println("</body>");
-            out.println("</html>");
+            
+            
+            out.print(" <!DOCTYPE html> ");
+            out.print(" <html lang='pt-BR'> ");
+            out.print(" <head> ");
+            out.print("     <title>Resultado - Juros Composto</title> ");
+            out.print("     <meta charset='UTF-8'> ");
+            out.print("     <meta name='viewport' content='width=device-width, initial-scale=1'> ");
+            out.print("     <link rel='stylesheet' type='text/css' href='../assets/vendor/semantic/dist/semantic.min.css'> ");
+            out.print("     <link href='../assets/style.css' rel='stylesheet'> ");
+            out.print(" </head> ");
+            out.print(" <body> ");
+            out.print("     <div class='ui visible blue inverted sidebar vertical labeled icon menu'> ");
+            out.print("         <a href='home' class='item'> ");
+            out.print("             <i class='home left icon'></i> Home ");
+            out.print("         </a> ");
+            out.print("         <a href='juros-simples' class='item'> ");
+            out.print("             <i class='percent left icon'></i> Juros Simples ");
+            out.print("         </a> ");
+            out.print("         <a href='juros-composto' class='active item'> ");
+            out.print("             <i class='signal left icon'></i> Juros Composto ");
+            out.print("         </a> ");
+            out.print("     </div> ");
+            out.print("     <div class='pusher'> ");
+            out.print("         <h1 class='ui  header'>Juros Composto</h1> ");
+            out.print("         <div class='ui divider'></div> ");
+            out.print("         <div class='ui grid'> ");
+            out.print("             <div class='sixteen wide mobile sixteen wide tablet twelve wide computer column'> ");
+            out.print("                 <div class='ui clearing segment' id='resultados'> ");
+            out.print("                     <div class='ui small statistics' id='valores'> ");
+            out.print("                         <div class='statistic'> ");
+            out.print("                             <div class='value'> ");
+            out.print("                                 $ " + String.format("%.2f", capital));
+            out.print("                             </div> ");
+            out.print("                             <div class='label'> ");
+            out.print("                                 Capital ");
+            out.print("                             </div> ");
+            out.print("                         </div> ");
+            out.print("                         <div class='statistic'> ");
+            out.print("                             <div class='value'> ");
+            out.print("                                 " + juros + "% ");
+            out.print("                             </div> ");
+            out.print("                             <div class='label'> ");
+            out.print("                                 Taxa de Juros ");
+            out.print("                             </div> ");
+            out.print("                         </div> ");
+            out.print("                         <div class='statistic'> ");
+            out.print("                             <div class='value'> ");
+            out.print("                                 " + tempo);
+            out.print("                             </div> ");
+            out.print("                             <div class='label'> ");
+            out.print("                                 Períodos ");
+            out.print("                             </div> ");
+            out.print("                         </div> ");
+            out.print("                     </div> ");
+            out.print("                      ");
+            out.print("                     <h3 class='ui dividing left aligned header'>Resultados</h3> ");
+            out.print("                     <table class='ui selectable celled blue large table'> ");
+            out.print("                         <thead> ");
+            out.print("                             <tr> ");
+            out.print("                                 <th>Período</th> ");
+            out.print("                                 <th>Capital</th> ");
+            out.print("                                 <th>Juros</th> ");
+            out.print("                                 <th>Montante</th> ");
+            out.print("                             </tr> ");
+            out.print("                         </thead> ");
+            out.print("                         <tbody> ");
+            
+            double jurosSobreCapital;
+            do {
+                out.print("                             <tr> ");
+                out.print("                                 <td>" + controle + "</td> ");
+                out.print("                                 <td> ");
+                out.print("                                     <div>$ " + String.format("%.2f", capital) + "</div> ");
+                out.print("                                 </td> ");
+                jurosSobreCapital = capital * (juros / 100);
+                out.print("                                 <td>$ " + String.format("%.2f", jurosSobreCapital) + "</td> ");
+                montante = capital + jurosSobreCapital;
+                out.print("                                 <td>$ " + String.format("%.2f", montante) + "</td> ");
+                out.print("                             </tr> ");
+                capital = montante;
+                controle++;
+            } while (controle != tempo + 1);
+            
+            
+            
+            
+            out.print("                         </tbody> ");
+            out.print("                     </table> ");
+            out.print("                     <div class='ui statistic' > ");
+            out.print("                         <div class='value'> ");
+            out.print("                             $ 2960,00 ");
+            out.print("                         </div> ");
+            out.print("                         <div class='label'> ");
+            out.print("                             Valor Futuro ");
+            out.print("                         </div> ");
+            out.print("                     </div> ");
+            out.print("                 </div> ");
+            out.print("             </div> ");
+            out.print("         </div> ");
+            out.print("     </div> ");
+            out.print("     <script src='../assets/vendor/jquery/jquery-3.2.1.min.js'></script> ");
+            out.print("     <script src='../assets/vendor/semantic/dist/semantic.min.js'></script> ");
+            out.print("     <script src='../assets/script.js'></script> ");
+            out.print(" </body> ");
+            out.print(" </html> ");
         }
     }
 
