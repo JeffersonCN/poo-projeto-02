@@ -34,11 +34,11 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ResultJurosSimplesServlet</servlet-name>
-        <url-pattern>/resultado/juros-simples</url-pattern>
+        <url-pattern>/juros-simples/resultado</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ResultJurosCompostoServlet</servlet-name>
-        <url-pattern>/resultado/juros-composto</url-pattern>
+        <url-pattern>/juros-composto/resultado</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

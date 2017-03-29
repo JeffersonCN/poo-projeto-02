@@ -28,8 +28,4 @@ $(document).ready(function (e) {
         duration: 600,
         interval: 300
     });
-
-    $('form').on('submit', function(e) {
-        $('.dimmer').toggleClass('active');
-    });
 });
