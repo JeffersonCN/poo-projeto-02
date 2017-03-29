@@ -99,8 +99,7 @@ public class FormJurosCompostoServlet extends HttpServlet {
             out.print("             </div> ");
             out.print("         </div> ");
             out.print("     </div> ");
-            out.print("     <script src='https://code.jquery.com/jquery-3.1.1.min.js' integrity='sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=' ");
-            out.print("         crossorigin='anonymous'></script> ");
+            out.print("     <script src='assets/vendor/jquery/jquery-3.2.1.min.js'></script> ");
             out.print("     <script src='assets/vendor/semantic/dist/semantic.min.js'></script> ");
             out.print("     <script src='assets/script.js'></script> ");
             out.print(" </body> ");
