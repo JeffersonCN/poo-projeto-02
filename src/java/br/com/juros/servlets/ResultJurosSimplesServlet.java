@@ -38,7 +38,21 @@ public class ResultJurosSimplesServlet extends HttpServlet {
             out.println("<title>Servlet ResultJurosSimplesServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet ResultJurosSimplesServlet at " + request.getContextPath() + "</h1>");
+            int c= 0;
+            try{ c = Integer.parseInt(request.getParameter("c"));
+            }catch(Exception ex){}
+            int j= 0;
+            try{ j = Integer.parseInt(request.getParameter("j"));
+            }catch(Exception ex){}
+            int t= 0;
+            try{t = Integer.parseInt(request.getParameter("t"));
+            }catch(Exception ex){}
+            double m = c * (1 + ((double)j/100) * t);
+            out.println("<h1>Resultado: </h1>");
+            out.println("<h2>O valor do Capital inserido foi R$ "+ c + "</h2>");
+            out.println("<h2>A taxa de juros: " + j + "%</h2>");
+            out.println("<h2>O tempo em meses: " + t + "</h2>");
+            out.println("<h2>Valor do montante será R$ " + m + "</h2>");
             out.println("</body>");
             out.println("</html>");
         }
