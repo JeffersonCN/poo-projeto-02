@@ -61,7 +61,7 @@ public class FormJurosSimplesServlet extends HttpServlet {
             out.print("                     <form action='juros-simples/resultado' class='ui large form'> ");
             out.print("                         <h4 class='ui dividing header'>Informações para o cálculo</h4> ");
             out.print("                         <div class='field'> ");
-            out.print("                             <label for=''>Capital</label> ");
+            out.print("                             <label for='capital'>Capital</label> ");
             out.print("                             <div class='ui left icon input'> ");
             out.print("                                 <input type='text' name='capital' id='capital' value=''> ");
             out.print("                                 <i class='dollar icon'></i> ");
@@ -77,9 +77,9 @@ public class FormJurosSimplesServlet extends HttpServlet {
             out.print("                              ");
             out.print("                         </div> ");
             out.print("                         <div class='field'> ");
-            out.print("                             <label for=''>Períodos</label> ");
+            out.print("                             <label for='periodos'>Períodos</label> ");
             out.print("                             <div class='ui left icon input'> ");
-            out.print("                                 <input type='number' name='periodos' value=''> ");
+            out.print("                                 <input type='number' name='periodos' id='periodos' value=''> ");
             out.print("                                 <i class='calendar icon'></i> ");
             out.print("                             </div> ");
             out.print("                              ");
