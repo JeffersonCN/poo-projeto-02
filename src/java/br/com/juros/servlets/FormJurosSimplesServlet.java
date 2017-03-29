@@ -42,7 +42,7 @@ public class FormJurosSimplesServlet extends HttpServlet {
             out.println("<p>Digite o Capital: </p>");
             out.println("<input type='text' name='c' placeholder='Apenas números'/><br><br>");
             out.println("<p>Digite a taxa de juros: </p>");
-            out.println("<input type='text' name='j' placeholder='Exemplo: 1.5'/><br><br>");
+            out.println("<input type='text' name='j' placeholder='Taxa ao mês'/><br><br>");
             out.println("<p>Digite o tempo: </p>");
             out.println("<input type='text' name='t' placeholder='Tempo em meses'/><br><br>");
             out.println("<input type='submit' value='Calcular'/>");
