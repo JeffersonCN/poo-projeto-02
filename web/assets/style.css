@@ -1,0 +1,41 @@
+body {
+    padding-left: 170px;
+    background-color: #f0f0f0;
+}
+
+.sidebar a {
+    font-size: 18px;
+}
+
+.pusher {
+    height: 100vh;
+    padding: 40px;
+}
+
+form {
+    padding: 20px;
+}
+
+input {
+    text-align: center !important;
+}
+
+.swing-down, #resultados {
+    visibility: hidden;
+}
+
+.segment p {
+    font-size: 16px;
+}
+#valores {
+    display: inline-block !important;
+    padding: 0 !important;
+}
+#resultados, #valores {
+    text-align: center;
+    padding: 20px;
+}
+
+#resultados .header {
+    margin-top: 0;
+}
