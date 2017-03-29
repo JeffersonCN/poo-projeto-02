@@ -45,12 +45,7 @@ public class ResultJurosCompostoServlet extends HttpServlet {
             try {
                 tempo = Integer.parseInt(request.getParameter("periodos"));
             } catch (Exception ex) {
-            }
-            int controle = 1;
-            double juroscalculado = 1 + (juros / 100);
-            double taxajuros = Math.pow(juroscalculado, tempo);
-            double montante = capital * juroscalculado;
-            
+            }            
             
             out.print(" <!DOCTYPE html> ");
             out.print(" <html lang='pt-BR'> ");
@@ -63,13 +58,13 @@ public class ResultJurosCompostoServlet extends HttpServlet {
             out.print(" </head> ");
             out.print(" <body> ");
             out.print("     <div class='ui visible blue inverted sidebar vertical labeled icon menu'> ");
-            out.print("         <a href='home' class='item'> ");
+            out.print("         <a href='/poo-projeto-02/home' class='item'> ");
             out.print("             <i class='home left icon'></i> Home ");
             out.print("         </a> ");
-            out.print("         <a href='juros-simples' class='item'> ");
+            out.print("         <a href='/poo-projeto-02/juros-simples' class='item'> ");
             out.print("             <i class='percent left icon'></i> Juros Simples ");
             out.print("         </a> ");
-            out.print("         <a href='juros-composto' class='active item'> ");
+            out.print("         <a href='/poo-projeto-02/juros-composto' class='active item'> ");
             out.print("             <i class='signal left icon'></i> Juros Composto ");
             out.print("         </a> ");
             out.print("     </div> ");
@@ -118,18 +113,25 @@ public class ResultJurosCompostoServlet extends HttpServlet {
             out.print("                         </thead> ");
             out.print("                         <tbody> ");
             
+            int controle = 1;
             double jurosSobreCapital;
+            double montante = 0;
             do {
                 out.print("                             <tr> ");
                 out.print("                                 <td>" + controle + "</td> ");
                 out.print("                                 <td> ");
                 out.print("                                     <div>$ " + String.format("%.2f", capital) + "</div> ");
                 out.print("                                 </td> ");
+                
                 jurosSobreCapital = capital * (juros / 100);
+                
                 out.print("                                 <td>$ " + String.format("%.2f", jurosSobreCapital) + "</td> ");
+                
                 montante = capital + jurosSobreCapital;
+                
                 out.print("                                 <td>$ " + String.format("%.2f", montante) + "</td> ");
                 out.print("                             </tr> ");
+                
                 capital = montante;
                 controle++;
             } while (controle != tempo + 1);
