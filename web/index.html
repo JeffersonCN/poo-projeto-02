@@ -1,19 +1,29 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
+<html lang='pt-BR'>
+
     <head>
-        <title>Redirecionando...</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home - Projeto 02 - Programação Orientada a Objetos</title>
+        <meta charset='UTF-8'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' href='assets/vendor/semantic/dist/semantic.min.css'>
     </head>
+
     <body>
-        <div>Redirecionando</div>
+        <div class="ui segment" style="height: 100vh; z-index: 100; margin: 0; border: none; border-radius: 0;">
+            <div class="ui active dimmer">
+                <div class="ui massive text loader">Carregando...</div>
+            </div>
+        </div>
+
+        <script src='https://code.jquery.com/jquery-3.1.1.min.js'></script>
+        <script src='assets/vendor/semantic/dist/semantic.min.js'></script>
         <script>
-            window.location = "home";
+            $(document).ready(function() {
+                setTimeout(function() {
+                    window.location = '/poo-projeto-02/home';
+                }, 1500);
+            });
         </script>
     </body>
+
 </html>
