@@ -85,7 +85,7 @@ public class ResultJurosCompostoServlet extends HttpServlet {
             out.print("                         </div> ");
             out.print("                         <div class='statistic'> ");
             out.print("                             <div class='value'> ");
-            out.print("                                 " + juros + "% ");
+            out.print("                                 " + String.format("%.2f", juros) + "% ");
             out.print("                             </div> ");
             out.print("                             <div class='label'> ");
             out.print("                                 Taxa de Juros ");
